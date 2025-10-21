@@ -4143,3 +4143,750 @@ PR AUC: 0.9999999999999999
 ✅ 1000 alerts generated. Check /home/bakri/projects/login-anomaly/data/alerts.csv
 ✅ Feedback file updated: /home/bakri/projects/login-anomaly/data/alerts_feedback.csv
 ✅ Production metrics recorded in /home/bakri/projects/login-anomaly/data/alerts_metrics.csv
+
+----- Missing Values: auth_parsed_large.csv -----
+timestamp    0.0
+ip           0.0
+user         0.0
+result       0.0
+dtype: float64
+
+----- Missing Values: auth_features_large.csv -----
+timestamp       0.0
+ip              0.0
+cnt_last_1m     0.0
+cnt_last_5m     0.0
+cnt_last_15m    0.0
+succ_count      0.0
+fail_count      0.0
+total_count     0.0
+fail_rate       0.0
+event_user      0.0
+event_result    0.0
+dtype: float64
+
+----- Result Distribution -----
+result
+success    821
+failed     179
+Name: count, dtype: int64
+
+----- Numeric Summary -----
+                           timestamp  cnt_last_1m  ...  total_count    fail_rate
+count                           1000  1000.000000  ...   1000.00000  1000.000000
+mean   2025-10-01 08:19:29.999999744     4.373000  ...      7.61700     0.500006
+min              2025-10-01 00:00:00     0.000000  ...      1.00000     0.000786
+25%              2025-10-01 04:09:45     2.000000  ...      4.00000     0.246669
+50%              2025-10-01 08:19:30     4.000000  ...      8.00000     0.484637
+75%              2025-10-01 12:29:15     7.000000  ...     11.00000     0.765519
+max              2025-10-01 16:39:00     9.000000  ...     14.00000     0.996880
+std                              NaN     2.801735  ...      4.04508     0.291784
+
+[8 rows x 8 columns]
+✅ Best hyperparameters: {'n_estimators': 50, 'max_depth': 5}
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       247
+           1       1.00      1.00      1.00       246
+
+    accuracy                           1.00       493
+   macro avg       1.00      1.00      1.00       493
+weighted avg       1.00      1.00      1.00       493
+
+ROC AUC: 1.0
+PR AUC: 1.0
+✅ Model and feature list saved.
+✅ 1000 alerts generated. Check /home/bakri/projects/login-anomaly/data/alerts.csv
+✅ Feedback file updated: /home/bakri/projects/login-anomaly/data/alerts_feedback.csv
+✅ Production metrics recorded in /home/bakri/projects/login-anomaly/data/alerts_metrics.csv
+
+----- Missing Values: auth_parsed_large.csv -----
+timestamp    0.0
+ip           0.0
+user         0.0
+result       0.0
+dtype: float64
+
+----- Missing Values: auth_features_large.csv -----
+timestamp       0.0
+ip              0.0
+cnt_last_1m     0.0
+cnt_last_5m     0.0
+cnt_last_15m    0.0
+succ_count      0.0
+fail_count      0.0
+total_count     0.0
+fail_rate       0.0
+event_user      0.0
+event_result    0.0
+dtype: float64
+
+----- Result Distribution -----
+result
+success    821
+failed     179
+Name: count, dtype: int64
+
+----- Numeric Summary -----
+                           timestamp  cnt_last_1m  ...  total_count    fail_rate
+count                           1000  1000.000000  ...   1000.00000  1000.000000
+mean   2025-10-01 08:19:29.999999744     4.373000  ...      7.61700     0.500006
+min              2025-10-01 00:00:00     0.000000  ...      1.00000     0.000786
+25%              2025-10-01 04:09:45     2.000000  ...      4.00000     0.246669
+50%              2025-10-01 08:19:30     4.000000  ...      8.00000     0.484637
+75%              2025-10-01 12:29:15     7.000000  ...     11.00000     0.765519
+max              2025-10-01 16:39:00     9.000000  ...     14.00000     0.996880
+std                              NaN     2.801735  ...      4.04508     0.291784
+
+[8 rows x 8 columns]
+✅ Best hyperparameters: {'n_estimators': 200, 'max_depth': 20}
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       247
+           1       1.00      1.00      1.00       246
+
+    accuracy                           1.00       493
+   macro avg       1.00      1.00      1.00       493
+weighted avg       1.00      1.00      1.00       493
+
+ROC AUC: 1.0
+PR AUC: 0.9999999999999999
+✅ Model and feature list saved.
+✅ 1000 alerts generated. Check /home/bakri/projects/login-anomaly/data/alerts.csv
+✅ Feedback file updated: /home/bakri/projects/login-anomaly/data/alerts_feedback.csv
+✅ Production metrics recorded in /home/bakri/projects/login-anomaly/data/alerts_metrics.csv
+
+----- Missing Values: auth_parsed_large.csv -----
+timestamp    0.0
+ip           0.0
+user         0.0
+result       0.0
+dtype: float64
+
+----- Missing Values: auth_features_large.csv -----
+timestamp       0.0
+ip              0.0
+cnt_last_1m     0.0
+cnt_last_5m     0.0
+cnt_last_15m    0.0
+succ_count      0.0
+fail_count      0.0
+total_count     0.0
+fail_rate       0.0
+event_user      0.0
+event_result    0.0
+dtype: float64
+
+----- Result Distribution -----
+result
+success    821
+failed     179
+Name: count, dtype: int64
+
+----- Numeric Summary -----
+                           timestamp  cnt_last_1m  ...  total_count    fail_rate
+count                           1000  1000.000000  ...   1000.00000  1000.000000
+mean   2025-10-01 08:19:29.999999744     4.373000  ...      7.61700     0.500006
+min              2025-10-01 00:00:00     0.000000  ...      1.00000     0.000786
+25%              2025-10-01 04:09:45     2.000000  ...      4.00000     0.246669
+50%              2025-10-01 08:19:30     4.000000  ...      8.00000     0.484637
+75%              2025-10-01 12:29:15     7.000000  ...     11.00000     0.765519
+max              2025-10-01 16:39:00     9.000000  ...     14.00000     0.996880
+std                              NaN     2.801735  ...      4.04508     0.291784
+
+[8 rows x 8 columns]
+✅ Best hyperparameters: {'n_estimators': 100, 'max_depth': 10}
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       247
+           1       1.00      1.00      1.00       246
+
+    accuracy                           1.00       493
+   macro avg       1.00      1.00      1.00       493
+weighted avg       1.00      1.00      1.00       493
+
+ROC AUC: 1.0
+PR AUC: 0.9999999999999999
+✅ Model and feature list saved.
+✅ 1000 alerts generated. Check /home/bakri/projects/login-anomaly/data/alerts.csv
+✅ Feedback file updated: /home/bakri/projects/login-anomaly/data/alerts_feedback.csv
+✅ Production metrics recorded in /home/bakri/projects/login-anomaly/data/alerts_metrics.csv
+
+----- Missing Values: auth_parsed_large.csv -----
+timestamp    0.0
+ip           0.0
+user         0.0
+result       0.0
+dtype: float64
+
+----- Missing Values: auth_features_large.csv -----
+timestamp       0.0
+ip              0.0
+cnt_last_1m     0.0
+cnt_last_5m     0.0
+cnt_last_15m    0.0
+succ_count      0.0
+fail_count      0.0
+total_count     0.0
+fail_rate       0.0
+event_user      0.0
+event_result    0.0
+dtype: float64
+
+----- Result Distribution -----
+result
+success    821
+failed     179
+Name: count, dtype: int64
+
+----- Numeric Summary -----
+                           timestamp  cnt_last_1m  ...  total_count    fail_rate
+count                           1000  1000.000000  ...   1000.00000  1000.000000
+mean   2025-10-01 08:19:29.999999744     4.373000  ...      7.61700     0.500006
+min              2025-10-01 00:00:00     0.000000  ...      1.00000     0.000786
+25%              2025-10-01 04:09:45     2.000000  ...      4.00000     0.246669
+50%              2025-10-01 08:19:30     4.000000  ...      8.00000     0.484637
+75%              2025-10-01 12:29:15     7.000000  ...     11.00000     0.765519
+max              2025-10-01 16:39:00     9.000000  ...     14.00000     0.996880
+std                              NaN     2.801735  ...      4.04508     0.291784
+
+[8 rows x 8 columns]
+✅ Best hyperparameters: {'n_estimators': 100, 'max_depth': None}
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       247
+           1       1.00      1.00      1.00       246
+
+    accuracy                           1.00       493
+   macro avg       1.00      1.00      1.00       493
+weighted avg       1.00      1.00      1.00       493
+
+ROC AUC: 1.0
+PR AUC: 1.0000000000000002
+✅ Model and feature list saved.
+✅ 1000 alerts generated. Check /home/bakri/projects/login-anomaly/data/alerts.csv
+✅ Feedback file updated: /home/bakri/projects/login-anomaly/data/alerts_feedback.csv
+✅ Production metrics recorded in /home/bakri/projects/login-anomaly/data/alerts_metrics.csv
+
+----- Missing Values: auth_parsed_large.csv -----
+timestamp    0.0
+ip           0.0
+user         0.0
+result       0.0
+dtype: float64
+
+----- Missing Values: auth_features_large.csv -----
+timestamp       0.0
+ip              0.0
+cnt_last_1m     0.0
+cnt_last_5m     0.0
+cnt_last_15m    0.0
+succ_count      0.0
+fail_count      0.0
+total_count     0.0
+fail_rate       0.0
+event_user      0.0
+event_result    0.0
+dtype: float64
+
+----- Result Distribution -----
+result
+success    821
+failed     179
+Name: count, dtype: int64
+
+----- Numeric Summary -----
+                           timestamp  cnt_last_1m  ...  total_count    fail_rate
+count                           1000  1000.000000  ...   1000.00000  1000.000000
+mean   2025-10-01 08:19:29.999999744     4.373000  ...      7.61700     0.500006
+min              2025-10-01 00:00:00     0.000000  ...      1.00000     0.000786
+25%              2025-10-01 04:09:45     2.000000  ...      4.00000     0.246669
+50%              2025-10-01 08:19:30     4.000000  ...      8.00000     0.484637
+75%              2025-10-01 12:29:15     7.000000  ...     11.00000     0.765519
+max              2025-10-01 16:39:00     9.000000  ...     14.00000     0.996880
+std                              NaN     2.801735  ...      4.04508     0.291784
+
+[8 rows x 8 columns]
+✅ Best hyperparameters: {'n_estimators': 100, 'max_depth': 5}
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       247
+           1       1.00      1.00      1.00       246
+
+    accuracy                           1.00       493
+   macro avg       1.00      1.00      1.00       493
+weighted avg       1.00      1.00      1.00       493
+
+ROC AUC: 1.0
+PR AUC: 0.9999999999999999
+✅ Model and feature list saved.
+✅ 1000 alerts generated. Check /home/bakri/projects/login-anomaly/data/alerts.csv
+✅ Feedback file updated: /home/bakri/projects/login-anomaly/data/alerts_feedback.csv
+✅ Production metrics recorded in /home/bakri/projects/login-anomaly/data/alerts_metrics.csv
+
+----- Missing Values: auth_parsed_large.csv -----
+timestamp    0.0
+ip           0.0
+user         0.0
+result       0.0
+dtype: float64
+
+----- Missing Values: auth_features_large.csv -----
+timestamp       0.0
+ip              0.0
+cnt_last_1m     0.0
+cnt_last_5m     0.0
+cnt_last_15m    0.0
+succ_count      0.0
+fail_count      0.0
+total_count     0.0
+fail_rate       0.0
+event_user      0.0
+event_result    0.0
+dtype: float64
+
+----- Result Distribution -----
+result
+success    821
+failed     179
+Name: count, dtype: int64
+
+----- Numeric Summary -----
+                           timestamp  cnt_last_1m  ...  total_count    fail_rate
+count                           1000  1000.000000  ...   1000.00000  1000.000000
+mean   2025-10-01 08:19:29.999999744     4.373000  ...      7.61700     0.500006
+min              2025-10-01 00:00:00     0.000000  ...      1.00000     0.000786
+25%              2025-10-01 04:09:45     2.000000  ...      4.00000     0.246669
+50%              2025-10-01 08:19:30     4.000000  ...      8.00000     0.484637
+75%              2025-10-01 12:29:15     7.000000  ...     11.00000     0.765519
+max              2025-10-01 16:39:00     9.000000  ...     14.00000     0.996880
+std                              NaN     2.801735  ...      4.04508     0.291784
+
+[8 rows x 8 columns]
+✅ Best hyperparameters: {'n_estimators': 200, 'max_depth': None}
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       247
+           1       1.00      1.00      1.00       246
+
+    accuracy                           1.00       493
+   macro avg       1.00      1.00      1.00       493
+weighted avg       1.00      1.00      1.00       493
+
+ROC AUC: 1.0
+PR AUC: 1.0
+✅ Model and feature list saved.
+✅ 1000 alerts generated. Check /home/bakri/projects/login-anomaly/data/alerts.csv
+✅ Feedback file updated: /home/bakri/projects/login-anomaly/data/alerts_feedback.csv
+✅ Production metrics recorded in /home/bakri/projects/login-anomaly/data/alerts_metrics.csv
+
+----- Missing Values: auth_parsed_large.csv -----
+timestamp    0.0
+ip           0.0
+user         0.0
+result       0.0
+dtype: float64
+
+----- Missing Values: auth_features_large.csv -----
+timestamp       0.0
+ip              0.0
+cnt_last_1m     0.0
+cnt_last_5m     0.0
+cnt_last_15m    0.0
+succ_count      0.0
+fail_count      0.0
+total_count     0.0
+fail_rate       0.0
+event_user      0.0
+event_result    0.0
+dtype: float64
+
+----- Result Distribution -----
+result
+success    821
+failed     179
+Name: count, dtype: int64
+
+----- Numeric Summary -----
+                           timestamp  cnt_last_1m  ...  total_count    fail_rate
+count                           1000  1000.000000  ...   1000.00000  1000.000000
+mean   2025-10-01 08:19:29.999999744     4.373000  ...      7.61700     0.500006
+min              2025-10-01 00:00:00     0.000000  ...      1.00000     0.000786
+25%              2025-10-01 04:09:45     2.000000  ...      4.00000     0.246669
+50%              2025-10-01 08:19:30     4.000000  ...      8.00000     0.484637
+75%              2025-10-01 12:29:15     7.000000  ...     11.00000     0.765519
+max              2025-10-01 16:39:00     9.000000  ...     14.00000     0.996880
+std                              NaN     2.801735  ...      4.04508     0.291784
+
+[8 rows x 8 columns]
+✅ Best hyperparameters: {'n_estimators': 100, 'max_depth': 5}
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       247
+           1       1.00      1.00      1.00       246
+
+    accuracy                           1.00       493
+   macro avg       1.00      1.00      1.00       493
+weighted avg       1.00      1.00      1.00       493
+
+ROC AUC: 1.0
+PR AUC: 0.9999999999999999
+✅ Model and feature list saved.
+✅ 1000 alerts generated. Check /home/bakri/projects/login-anomaly/data/alerts.csv
+Traceback (most recent call last):
+  File "/home/bakri/projects/login-anomaly/run_pipeline.py", line 231, in <module>
+    df_feedback = pd.read_csv(FEEDBACK_FILE, parse_dates=['timestamp'])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bakri/sec-env/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bakri/sec-env/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bakri/sec-env/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bakri/sec-env/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bakri/sec-env/lib/python3.12/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 93, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/parsers.pyx", line 581, in pandas._libs.parsers.TextReader.__cinit__
+pandas.errors.EmptyDataError: No columns to parse from file
+
+----- Missing Values: auth_parsed_large.csv -----
+timestamp    0.0
+ip           0.0
+user         0.0
+result       0.0
+dtype: float64
+
+----- Missing Values: auth_features_large.csv -----
+timestamp       0.0
+ip              0.0
+cnt_last_1m     0.0
+cnt_last_5m     0.0
+cnt_last_15m    0.0
+succ_count      0.0
+fail_count      0.0
+total_count     0.0
+fail_rate       0.0
+event_user      0.0
+event_result    0.0
+dtype: float64
+
+----- Result Distribution -----
+result
+success    821
+failed     179
+Name: count, dtype: int64
+
+----- Numeric Summary -----
+                           timestamp  cnt_last_1m  ...  total_count    fail_rate
+count                           1000  1000.000000  ...   1000.00000  1000.000000
+mean   2025-10-01 08:19:29.999999744     4.373000  ...      7.61700     0.500006
+min              2025-10-01 00:00:00     0.000000  ...      1.00000     0.000786
+25%              2025-10-01 04:09:45     2.000000  ...      4.00000     0.246669
+50%              2025-10-01 08:19:30     4.000000  ...      8.00000     0.484637
+75%              2025-10-01 12:29:15     7.000000  ...     11.00000     0.765519
+max              2025-10-01 16:39:00     9.000000  ...     14.00000     0.996880
+std                              NaN     2.801735  ...      4.04508     0.291784
+
+[8 rows x 8 columns]
+✅ Best hyperparameters: {'n_estimators': 200, 'max_depth': 10}
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       247
+           1       1.00      1.00      1.00       246
+
+    accuracy                           1.00       493
+   macro avg       1.00      1.00      1.00       493
+weighted avg       1.00      1.00      1.00       493
+
+ROC AUC: 1.0
+PR AUC: 1.0
+✅ Model and feature list saved.
+✅ 1000 alerts generated. Check /home/bakri/projects/login-anomaly/data/alerts.csv
+✅ Feedback file updated: /home/bakri/projects/login-anomaly/data/alerts_feedback.csv
+✅ Production metrics recorded in /home/bakri/projects/login-anomaly/data/alerts_metrics.csv
+
+----- Missing Values: auth_parsed_large.csv -----
+timestamp    0.0
+ip           0.0
+user         0.0
+result       0.0
+dtype: float64
+
+----- Missing Values: auth_features_large.csv -----
+timestamp       0.0
+ip              0.0
+cnt_last_1m     0.0
+cnt_last_5m     0.0
+cnt_last_15m    0.0
+succ_count      0.0
+fail_count      0.0
+total_count     0.0
+fail_rate       0.0
+event_user      0.0
+event_result    0.0
+dtype: float64
+
+----- Result Distribution -----
+result
+success    821
+failed     179
+Name: count, dtype: int64
+
+----- Numeric Summary -----
+                           timestamp  cnt_last_1m  ...  total_count    fail_rate
+count                           1000  1000.000000  ...   1000.00000  1000.000000
+mean   2025-10-01 08:19:29.999999744     4.373000  ...      7.61700     0.500006
+min              2025-10-01 00:00:00     0.000000  ...      1.00000     0.000786
+25%              2025-10-01 04:09:45     2.000000  ...      4.00000     0.246669
+50%              2025-10-01 08:19:30     4.000000  ...      8.00000     0.484637
+75%              2025-10-01 12:29:15     7.000000  ...     11.00000     0.765519
+max              2025-10-01 16:39:00     9.000000  ...     14.00000     0.996880
+std                              NaN     2.801735  ...      4.04508     0.291784
+
+[8 rows x 8 columns]
+✅ Best hyperparameters: {'n_estimators': 50, 'max_depth': 5}
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       247
+           1       1.00      1.00      1.00       246
+
+    accuracy                           1.00       493
+   macro avg       1.00      1.00      1.00       493
+weighted avg       1.00      1.00      1.00       493
+
+ROC AUC: 1.0
+PR AUC: 1.0
+✅ Model and feature list saved.
+✅ 1000 alerts generated. Check /home/bakri/projects/login-anomaly/data/alerts.csv
+✅ Feedback file updated: /home/bakri/projects/login-anomaly/data/alerts_feedback.csv
+✅ Production metrics recorded in /home/bakri/projects/login-anomaly/data/alerts_metrics.csv
+
+----- Missing Values: auth_parsed_large.csv -----
+timestamp    0.0
+ip           0.0
+user         0.0
+result       0.0
+dtype: float64
+
+----- Missing Values: auth_features_large.csv -----
+timestamp       0.0
+ip              0.0
+cnt_last_1m     0.0
+cnt_last_5m     0.0
+cnt_last_15m    0.0
+succ_count      0.0
+fail_count      0.0
+total_count     0.0
+fail_rate       0.0
+event_user      0.0
+event_result    0.0
+dtype: float64
+
+----- Result Distribution -----
+result
+success    821
+failed     179
+Name: count, dtype: int64
+
+----- Numeric Summary -----
+                           timestamp  cnt_last_1m  ...  total_count    fail_rate
+count                           1000  1000.000000  ...   1000.00000  1000.000000
+mean   2025-10-01 08:19:29.999999744     4.373000  ...      7.61700     0.500006
+min              2025-10-01 00:00:00     0.000000  ...      1.00000     0.000786
+25%              2025-10-01 04:09:45     2.000000  ...      4.00000     0.246669
+50%              2025-10-01 08:19:30     4.000000  ...      8.00000     0.484637
+75%              2025-10-01 12:29:15     7.000000  ...     11.00000     0.765519
+max              2025-10-01 16:39:00     9.000000  ...     14.00000     0.996880
+std                              NaN     2.801735  ...      4.04508     0.291784
+
+[8 rows x 8 columns]
+✅ Best hyperparameters: {'n_estimators': 200, 'max_depth': 10}
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       247
+           1       1.00      1.00      1.00       246
+
+    accuracy                           1.00       493
+   macro avg       1.00      1.00      1.00       493
+weighted avg       1.00      1.00      1.00       493
+
+ROC AUC: 1.0
+PR AUC: 1.0
+✅ Model and feature list saved.
+✅ 1000 alerts generated. Check /home/bakri/projects/login-anomaly/data/alerts.csv
+✅ Feedback file updated: /home/bakri/projects/login-anomaly/data/alerts_feedback.csv
+✅ Production metrics recorded in /home/bakri/projects/login-anomaly/data/alerts_metrics.csv
+
+----- Missing Values: auth_parsed_large.csv -----
+timestamp    0.0
+ip           0.0
+user         0.0
+result       0.0
+dtype: float64
+
+----- Missing Values: auth_features_large.csv -----
+timestamp       0.0
+ip              0.0
+cnt_last_1m     0.0
+cnt_last_5m     0.0
+cnt_last_15m    0.0
+succ_count      0.0
+fail_count      0.0
+total_count     0.0
+fail_rate       0.0
+event_user      0.0
+event_result    0.0
+dtype: float64
+
+----- Result Distribution -----
+result
+success    821
+failed     179
+Name: count, dtype: int64
+
+----- Numeric Summary -----
+                           timestamp  cnt_last_1m  ...  total_count    fail_rate
+count                           1000  1000.000000  ...   1000.00000  1000.000000
+mean   2025-10-01 08:19:29.999999744     4.373000  ...      7.61700     0.500006
+min              2025-10-01 00:00:00     0.000000  ...      1.00000     0.000786
+25%              2025-10-01 04:09:45     2.000000  ...      4.00000     0.246669
+50%              2025-10-01 08:19:30     4.000000  ...      8.00000     0.484637
+75%              2025-10-01 12:29:15     7.000000  ...     11.00000     0.765519
+max              2025-10-01 16:39:00     9.000000  ...     14.00000     0.996880
+std                              NaN     2.801735  ...      4.04508     0.291784
+
+[8 rows x 8 columns]
+✅ Best hyperparameters: {'n_estimators': 100, 'max_depth': None}
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       247
+           1       1.00      1.00      1.00       246
+
+    accuracy                           1.00       493
+   macro avg       1.00      1.00      1.00       493
+weighted avg       1.00      1.00      1.00       493
+
+ROC AUC: 1.0
+PR AUC: 1.0000000000000002
+✅ Model and feature list saved.
+✅ 1000 alerts generated. Check /home/bakri/projects/login-anomaly/data/alerts.csv
+✅ Feedback file updated: /home/bakri/projects/login-anomaly/data/alerts_feedback.csv
+✅ Production metrics recorded in /home/bakri/projects/login-anomaly/data/alerts_metrics.csv
+
+----- Missing Values: auth_parsed_large.csv -----
+timestamp    0.0
+ip           0.0
+user         0.0
+result       0.0
+dtype: float64
+
+----- Missing Values: auth_features_large.csv -----
+timestamp       0.0
+ip              0.0
+cnt_last_1m     0.0
+cnt_last_5m     0.0
+cnt_last_15m    0.0
+succ_count      0.0
+fail_count      0.0
+total_count     0.0
+fail_rate       0.0
+event_user      0.0
+event_result    0.0
+dtype: float64
+
+----- Result Distribution -----
+result
+success    821
+failed     179
+Name: count, dtype: int64
+
+----- Numeric Summary -----
+                           timestamp  cnt_last_1m  ...  total_count    fail_rate
+count                           1000  1000.000000  ...   1000.00000  1000.000000
+mean   2025-10-01 08:19:29.999999744     4.373000  ...      7.61700     0.500006
+min              2025-10-01 00:00:00     0.000000  ...      1.00000     0.000786
+25%              2025-10-01 04:09:45     2.000000  ...      4.00000     0.246669
+50%              2025-10-01 08:19:30     4.000000  ...      8.00000     0.484637
+75%              2025-10-01 12:29:15     7.000000  ...     11.00000     0.765519
+max              2025-10-01 16:39:00     9.000000  ...     14.00000     0.996880
+std                              NaN     2.801735  ...      4.04508     0.291784
+
+[8 rows x 8 columns]
+✅ Best hyperparameters: {'n_estimators': 200, 'max_depth': 10}
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       247
+           1       1.00      1.00      1.00       246
+
+    accuracy                           1.00       493
+   macro avg       1.00      1.00      1.00       493
+weighted avg       1.00      1.00      1.00       493
+
+ROC AUC: 1.0
+PR AUC: 1.0
+✅ Model and feature list saved.
+✅ 1000 alerts generated. Check /home/bakri/projects/login-anomaly/data/alerts.csv
+✅ Feedback file updated: /home/bakri/projects/login-anomaly/data/alerts_feedback.csv
+✅ Production metrics recorded in /home/bakri/projects/login-anomaly/data/alerts_metrics.csv
+
+----- Missing Values: auth_parsed_large.csv -----
+timestamp    0.0
+ip           0.0
+user         0.0
+result       0.0
+dtype: float64
+
+----- Missing Values: auth_features_large.csv -----
+timestamp       0.0
+ip              0.0
+cnt_last_1m     0.0
+cnt_last_5m     0.0
+cnt_last_15m    0.0
+succ_count      0.0
+fail_count      0.0
+total_count     0.0
+fail_rate       0.0
+event_user      0.0
+event_result    0.0
+dtype: float64
+
+----- Result Distribution -----
+result
+success    821
+failed     179
+Name: count, dtype: int64
+
+----- Numeric Summary -----
+                           timestamp  cnt_last_1m  ...  total_count    fail_rate
+count                           1000  1000.000000  ...   1000.00000  1000.000000
+mean   2025-10-01 08:19:29.999999744     4.373000  ...      7.61700     0.500006
+min              2025-10-01 00:00:00     0.000000  ...      1.00000     0.000786
+25%              2025-10-01 04:09:45     2.000000  ...      4.00000     0.246669
+50%              2025-10-01 08:19:30     4.000000  ...      8.00000     0.484637
+75%              2025-10-01 12:29:15     7.000000  ...     11.00000     0.765519
+max              2025-10-01 16:39:00     9.000000  ...     14.00000     0.996880
+std                              NaN     2.801735  ...      4.04508     0.291784
+
+[8 rows x 8 columns]
+✅ Best hyperparameters: {'n_estimators': 100, 'max_depth': 5}
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00       247
+           1       1.00      1.00      1.00       246
+
+    accuracy                           1.00       493
+   macro avg       1.00      1.00      1.00       493
+weighted avg       1.00      1.00      1.00       493
+
+ROC AUC: 1.0
+PR AUC: 0.9999999999999999
+✅ Model and feature list saved.
+✅ 1000 alerts generated. Check /home/bakri/projects/login-anomaly/data/alerts.csv
+✅ Feedback file updated: /home/bakri/projects/login-anomaly/data/alerts_feedback.csv
+✅ Production metrics recorded in /home/bakri/projects/login-anomaly/data/alerts_metrics.csv
