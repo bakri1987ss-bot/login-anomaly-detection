@@ -1,0 +1,11 @@
+pandas
+numpy
+scikit-learn
+imbalanced-learn
+joblib
+jupyterlab
+matplotlib
+seaborn
+geoip2
+python-dateutil
+regex
