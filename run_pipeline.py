@@ -1,5 +1,5 @@
 # ==============================
-# Login Anomaly Detection Full Pipeline (With Feedback Loop)
+# Login Anomaly Detection Full Pipeline (Enhanced with Feedback Handling)
 # ==============================
 
 import os
@@ -31,10 +31,7 @@ MODEL_FILE = os.path.join(BASE_DIR, 'random_forest_model_final.joblib')
 FEATURE_COLS_FILE = os.path.join(BASE_DIR, 'feature_columns.joblib')
 ALERT_FILE = os.path.join(BASE_DIR, 'alerts.csv')
 FEEDBACK_FILE = os.path.join(BASE_DIR, 'alerts_feedback.csv')
-
-for f in [AUTH_PARSED_FILE, AUTH_FEATURES_FILE, GEOIP_FILE]:
-    if not os.path.exists(f):
-        raise FileNotFoundError(f"❌ File not found: {f}")
+METRICS_FILE = os.path.join(BASE_DIR, 'alerts_metrics.csv')
 
 # ==============================
 # 1️⃣ Load Raw Data
@@ -49,8 +46,10 @@ print("\n----- Missing Values: auth_parsed_large.csv -----")
 print(df.isnull().mean() * 100)
 print("\n----- Missing Values: auth_features_large.csv -----")
 print(feat.isnull().mean() * 100)
+
 print("\n----- Result Distribution -----")
 print(df['result'].value_counts())
+
 print("\n----- Numeric Summary -----")
 print(feat.describe())
 
@@ -75,11 +74,11 @@ y = df['result_bin'].astype(int)
 # ==============================
 # 4️⃣ Feature Engineering
 # ==============================
-# Hour & night
+# Hour & Night flag
 feat['hour'] = df['timestamp'].dt.hour
 feat['is_night'] = feat['hour'].isin([0,1,2,3,4,5,23]).astype(int)
 
-# Average interarrival per IP
+# Avg interarrival
 df_sorted = df.sort_values(['ip','timestamp'])
 df_sorted['time_diff'] = df_sorted.groupby('ip')['timestamp'].diff().dt.total_seconds()
 feat['avg_interarrival'] = df_sorted.groupby('ip')['time_diff'].transform('mean').fillna(0)
@@ -103,7 +102,7 @@ def unique_users_last_5(series):
 df['unique_users_last_5'] = df.groupby('ip')['user'].transform(unique_users_last_5)
 feat['unique_users_last_5'] = df['unique_users_last_5'].fillna(0).astype(int)
 
-# GeoIP Features
+# GeoIP features
 reader = geoip2.database.Reader(GEOIP_FILE)
 geo_cache = {}
 def geoip_lookup(ip):
@@ -155,16 +154,20 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # ==============================
-# 9️⃣ Train Model (RandomForest)
+# 9️⃣ Train Model
 # ==============================
 param_dist = {'n_estimators':[50,100,200],'max_depth':[5,10,20,None]}
-rs = RandomizedSearchCV(RandomForestClassifier(class_weight='balanced', random_state=42, n_jobs=-1),
-                        param_distributions=param_dist, n_iter=10, cv=3, scoring='recall')
+rs = RandomizedSearchCV(
+    RandomForestClassifier(class_weight='balanced', random_state=42, n_jobs=-1),
+    param_distributions=param_dist, n_iter=10, cv=3, scoring='recall'
+)
 rs.fit(X_train, y_train)
 clf = rs.best_estimator_
 print("✅ Best hyperparameters:", rs.best_params_)
 
-# Evaluate
+# ==============================
+# 🔹 Evaluate Model
+# ==============================
 y_pred = clf.predict(X_test)
 y_proba = clf.predict_proba(X_test)[:,1]
 print(classification_report(y_test, y_pred))
@@ -196,6 +199,7 @@ def predict_new_data(feature_file, threshold=0.5):
     
     df_new = pd.read_csv(feature_file, low_memory=False)
     
+    # Ensure all trained features exist
     for c in X.columns:
         if c not in df_new.columns:
             df_new[c] = 0
@@ -222,38 +226,35 @@ if alerts is not None and not alerts.empty:
     print(f"✅ {len(alerts)} alerts generated. Check {ALERT_FILE}")
 else:
     print("⚠️ No alerts generated.")
-
 # ==============================
-# 🔹 Update Feedback Loop
+# 🔹 Handle Feedback Safely (Clean corrupted rows)
 # ==============================
-if alerts is not None and not alerts.empty:
-    if os.path.exists(FEEDBACK_FILE):
-        df_feedback = pd.read_csv(FEEDBACK_FILE, parse_dates=['timestamp'])
-        df_to_append = alerts[~alerts.set_index(['timestamp','ip','user']).index.isin(
-            df_feedback.set_index(['timestamp','ip','user']).index
-        )]
-        if not df_to_append.empty:
-            df_to_append['feedback'] = 'NA'
-            df_feedback = pd.concat([df_feedback, df_to_append], ignore_index=True)
-        df_feedback.to_csv(FEEDBACK_FILE, index=False)
-    else:
-        alerts['feedback'] = 'NA'
-        alerts.to_csv(FEEDBACK_FILE, index=False)
-    print(f"✅ Feedback file updated: {FEEDBACK_FILE}")
+if os.path.exists(FEEDBACK_FILE):
+    fixed_rows = []
+    with open(FEEDBACK_FILE, 'r') as f:
+        for line in f:
+            if len(line.strip().split(',')) == 7:  # Keep only rows with 7 columns
+                fixed_rows.append(line)
+    # Save to a temporary cleaned file
+    FEEDBACK_FIXED = os.path.join(BASE_DIR, 'alerts_feedback_fixed.csv')
+    with open(FEEDBACK_FIXED, 'w') as f:
+        f.writelines(fixed_rows)
+    
+    # Read the cleaned feedback
+    df_feedback = pd.read_csv(FEEDBACK_FIXED, parse_dates=['timestamp'])
+    print(f"✅ Feedback file loaded (cleaned): {FEEDBACK_FIXED}")
 else:
-    print("⚠️ No alerts to update feedback.")
+    print("⚠️ Feedback file not found, skipping feedback matrix.")
+    df_feedback = pd.DataFrame(columns=['timestamp','ip','user','failed_prob','alert','label'])
+
 
 # ==============================
-# 🔹 Optional: record production metrics
+# 🔹 Record Production Metrics
 # ==============================
-metrics_file = os.path.join(BASE_DIR, 'alerts_metrics.csv')
 metrics = {
-    'timestamp': pd.Timestamp.now(),
-    'num_alerts': len(alerts) if alerts is not None else 0
+    'total_alerts': len(alerts) if alerts is not None else 0,
+    'true_positives': df_feedback['label'].sum() if 'label' in df_feedback else 0
 }
-df_metrics = pd.DataFrame([metrics])
-if os.path.exists(metrics_file):
-    df_metrics.to_csv(metrics_file, mode='a', header=False, index=False)
-else:
-    df_metrics.to_csv(metrics_file, index=False)
-print(f"✅ Production metrics recorded in {metrics_file}")
+
+pd.DataFrame([metrics]).to_csv(METRICS_FILE, index=False)
+print(f"✅ Production metrics recorded in {METRICS_FILE}")
